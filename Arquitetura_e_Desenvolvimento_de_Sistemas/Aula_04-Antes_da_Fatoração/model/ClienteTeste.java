@@ -9,12 +9,12 @@ public class ClienteTeste {
 		cliente.carregar();
 		System.out.println(cliente);
 		cliente.setFone("123123333");
-		cliente.setEmail("bcp"+cliente.getId()+"@usjt.br");
+		cliente.setEmail("bcp" + cliente.getId() + "@usjt.br");
 		cliente.atualizar();
 		cliente.carregar();
 		System.out.println(cliente);
 		cliente.excluir();
 		cliente.carregar();
-		System.out.println(cliente);		
+		System.out.println(cliente);
 	}
 }

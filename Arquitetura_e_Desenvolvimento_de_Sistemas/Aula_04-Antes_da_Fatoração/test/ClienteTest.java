@@ -1,6 +1,5 @@
 package test;
 
-
 import static org.junit.Assert.assertEquals;
 import model.Cliente;
 
@@ -17,28 +16,26 @@ public class ClienteTest {
 	/*
 	 * Antes de rodar este teste, certifique-se que nao ha no banco nenhuma
 	 * linha com o id igual ao do escolhido para o to instanciado abaixo. Se
-	 * houver, delete. 
-	 * Certifique-se também que sobrecarregou o equals na classe
-	 * Cliente. 
-	 * Certifique-se que a fixture cliente1 foi criada no banco.
-	 * Além disso, a ordem de execução dos testes é importante; por
-	 * isso a anotação FixMethodOrder logo acima do nome desta classe
+	 * houver, delete. Certifique-se também que sobrecarregou o equals na
+	 * classe Cliente. Certifique-se que a fixture cliente1 foi criada no banco.
+	 * Além disso, a ordem de execução dos testes é importante; por isso a
+	 * anotação FixMethodOrder logo acima do nome desta classe
 	 */
 	@Before
 	public void setUp() throws Exception {
 		System.out.println("setup");
-		cliente = new Cliente(id, "Batista Cepelos", "(11) 91234-4321", "btcp@usjt.br" );
-		copia = new Cliente(id, "Batista Cepelos", "(11) 91234-4321", "btcp@usjt.br" );
+		cliente = new Cliente(id, "Batista Cepelos", "(11) 91234-4321", "btcp@usjt.br");
+		copia = new Cliente(id, "Batista Cepelos", "(11) 91234-4321", "btcp@usjt.br");
 		System.out.println(cliente);
 		System.out.println(copia);
 		System.out.println(id);
 	}
-	
+
 	@Test
 	public void test00Carregar() {
 		System.out.println("carregar");
-		//para funcionar o cliente 1 deve ter sido carregado no banco por fora
-		Cliente fixture = new Cliente(1, "Carlos Drummond de Andrade", "(11) 91234-4321", "cda@usjt.br" );
+		// para funcionar o cliente 1 deve ter sido carregado no banco por fora
+		Cliente fixture = new Cliente(1, "Carlos Drummond de Andrade", "(11) 91234-4321", "cda@usjt.br");
 		Cliente novo = new Cliente(1, null, null, null);
 		novo.carregar();
 		assertEquals("testa inclusao", novo, fixture);
@@ -58,7 +55,7 @@ public class ClienteTest {
 	public void test02Atualizar() {
 		System.out.println("atualizar");
 		cliente.setFone("999999");
-		copia.setFone("999999");		
+		copia.setFone("999999");
 		cliente.atualizar();
 		cliente.carregar();
 		assertEquals("testa atualizacao", cliente, copia);
