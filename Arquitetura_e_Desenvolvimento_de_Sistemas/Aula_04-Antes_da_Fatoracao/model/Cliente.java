@@ -12,13 +12,6 @@ public class Cliente {
 	private String fone;
 	private String email;
 
-	static {
-		try {
-			Class.forName("com.mysql.jdbc.Driver");
-		} catch (ClassNotFoundException e) {
-			throw new RuntimeException(e);
-		}
-	}
 	
 	public Cliente(){
 		
@@ -30,14 +23,6 @@ public class Cliente {
 		this.nome = nome;
 		this.fone = fone;
 		this.email = email;
-	}
-
-
-	
-	// Obtém conexão com o banco de dados
-	public Connection obtemConexao() throws SQLException {
-		return DriverManager
-				.getConnection("jdbc:mysql://localhost/vendas?user=alunos&password=alunos");
 	}
 
 	public void criar() {
