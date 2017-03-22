@@ -72,4 +72,4 @@ public class ClienteTest {
 		cliente.carregar();
 		assertEquals("testa exclusao", cliente, copia);
 	}
-}
+}//Cláudio Oliveira
